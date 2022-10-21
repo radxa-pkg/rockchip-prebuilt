@@ -1,0 +1,47 @@
+name: Build & Release
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Update submodule
+        id: update
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pushd debian
+            git fetch
+            rockchip_release=linux-5.10-gen-rkr
+            latest_tag="$(git tag -l "${rockchip_release}*" --sort=-refname | head -n 1)"
+            latest_release="$(echo $latest_tag | sed "s/${rockchip_release}//")"
+            echo "latest_release=$latest_release" >> $GITHUB_OUTPUT
+            git switch --detach $latest_tag
+          popd
+          echo "current_release=$(gh release list -L 1 | awk '{print $1}')" >> $GITHUB_OUTPUT
+          if [ -n "$(git status -s)" ]
+          then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .
+            git commit -m "bump version to $latest_release"
+            git push
+          fi
+      - name: Release
+        if: steps.update.outputs.current_release != steps.update.outputs.latest_release
+        uses: softprops/action-gh-release@cd28b0f5ee8571b76cfdaa62a30d51d752317477
+        with:
+          tag_name: ${{ steps.update.outputs.latest_release }}
+          body_path: README.md
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_commitish: main
+          draft: false
+          files: |
+            debian/packages/arm64/**/*.deb
+            pkg.conf

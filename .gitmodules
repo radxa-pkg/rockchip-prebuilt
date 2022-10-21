@@ -1,0 +1,3 @@
+[submodule "debian"]
+	path = debian
+	url = https://gitlab.com/rk3588_linux/linux/debian.git
