@@ -35,7 +35,7 @@ jobs:
           fi
       - name: Release
         if: steps.update.outputs.current_release != steps.update.outputs.latest_release
-        uses: softprops/action-gh-release@cd28b0f5ee8571b76cfdaa62a30d51d752317477
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.update.outputs.latest_release }}
           body_path: README.md
