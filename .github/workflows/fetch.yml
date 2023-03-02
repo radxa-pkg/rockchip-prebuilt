@@ -34,3 +34,4 @@ jobs:
           prerelease: true
           files: |
             debian/packages/arm64/**/*.deb
+            pkg.conf
