@@ -1,10 +1,10 @@
 name: Upload custom version
 on:
   workflow_dispatch:
-inputs:
-  tag:
-    description: 'Tag of Rockchip release'
-    required: true
+    inputs:
+      tag:
+        description: 'Tag of Rockchip release'
+        required: true
 
 jobs:
   release:
@@ -21,12 +21,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pushd debian
-            git switch --detach ${{ env.INPUT_TAG }}
+            git switch --detach ${{ github.event.inputs.tag }}
           popd
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ env.INPUT_TAG }}
+          tag_name: ${{ github.event.inputs.tag }}
           body_path: README.md
           token: ${{ secrets.GITHUB_TOKEN }}
           target_commitish: main
