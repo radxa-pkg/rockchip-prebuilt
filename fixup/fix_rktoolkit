@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#
+# Rockchip begins to include adbd in rktoolkit, which is newer than
+# android-tools-adbd we got from Debian Buster.
+#
+# However, the Debian 11 SDK contains the same package with the same version,
+# so using its own name as dependency can break adbd related functionality.
+#
+# Add a virtual package for dependency.
+#
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+source "$SCRIPT_DIR/libfixup.sh"
+
+fixup_callback() {
+    echo "Provides: rockchip-adbd-provider" >> control
+}
+
+fixup_loop "$@"

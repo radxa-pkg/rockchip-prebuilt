@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+# There are several incompatible camera_engine_rkaiq packages with the exact
+# same package name and version, causing a big mess:
+# * freight (the apt repo generator) will overwrite packages with same name and
+#   version.
+# * We have no way to pin specific product to the matching variant.
+#
+# As such, we add a unique suffix to version so they can coexist in our apt
+# repo, and then we let them provide virtual package, so other package's
+# dependencies do not have to pin to a specific version, and can be easily
+# upgraded.
+#
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+source "$SCRIPT_DIR/libfixup.sh"
+
+fixup_callback() {
+    local file_name soc package_name
+    file_name="$1"
+
+    soc="$(sed -E "s/.*(rk[0-9]+).*/\1/" <<< "$file_name")"
+    package_name="$(grep "Package:" control | cut -d' ' -f2)"
+    sed -i -E "s/^(Version: .*)$/\1-$soc/" control
+    echo "Provides: $package_name-$soc" >> control
+}
+
+fixup_loop "$@"
