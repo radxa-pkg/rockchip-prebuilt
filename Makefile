@@ -1,5 +1,4 @@
 PROJECT ?= rockchip-prebuilt
-RELEASE_PREFIX ?= linux-6.1-stan-rkr
 
 .PHONY: all
 all: build
@@ -8,11 +7,21 @@ all: build
 # Development
 #
 .PHONY: update
-update: debian
+update: debian VERSION clean
+	tag_name="$(shell cat VERSION)" && \
+	current_tag="$${tag_name%-*}" && \
+	tag_name="$${tag_name/rkr[0-9]*/rkr}" && \
 	pushd debian && \
-	git fetch && \
-	latest_tag="$(shell git tag -l "$(RELEASE_PREFIX)*" --sort=-refname | head -n 1)" && \
-	git switch --detach $latest_tag && \
+		git fetch && \
+		latest_tag="$(shell git tag -l "$$tag_name*" --sort=-refname | head -n 1)" && \
+		if [[ "$$current_tag" == "$$latest_tag" ]]; \
+		then \
+			echo "Current tag is up-to-date ($$current_tag)."; \
+		else \
+			echo "Current tag is $$current_tag. Updating to tag $$latest_tag..." && \
+			git switch --detach $$latest_tag && \
+			echo "$$latest_tag-1" > ../VERSION; \
+		fi && \
 	popd
 
 #
