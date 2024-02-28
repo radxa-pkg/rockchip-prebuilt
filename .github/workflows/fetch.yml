@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag of Rockchip release'
+        description: "Tag of Rockchip release"
         required: true
 
 jobs:
