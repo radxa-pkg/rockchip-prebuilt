@@ -14,8 +14,9 @@ source "$SCRIPT_DIR/libfixup.sh"
 
 fixup_callback() {
     extract data.tar usr/lib/chromium/chromium-bin
-    patchelf --replace-needed libmali.so.1 libgbm.so.1 ./chromium-bin
+    patchelf --replace-needed libmali.so.1 libgbm.so.1 usr/lib/chromium/chromium-bin
     replace data.tar usr/lib/chromium/chromium-bin
+    rm -rf usr/
 }
 
 fixup_loop "$@"

@@ -5,14 +5,14 @@ shopt -s nullglob
 
 extract() {
     local tar_file="$1" target="$2"
-    tar --to-stdout -xf "$tar_file" "./$target" > "./$(basename "$target")"
+    tar --extract -f "$tar_file" "./$target"
 }
 
 replace() {
     local tar_file="$1" target="$2"
     tar --delete -f "$tar_file" "./$target" # avoid duplicate members
-    tar --append --owner=root --group=root -f "$tar_file" "./$(basename "$target")"
-    rm "./$(basename "$target")"
+    tar --append -f "$tar_file" "./$target" --owner=root --group=root
+    rm "./$target"
 }
 
 fixup_loop() {
