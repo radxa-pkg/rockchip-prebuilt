@@ -28,13 +28,13 @@ fixup_loop() {
         pushd "$dir_path"
 
             ar x "$file_name"
-            unxz control.tar.xz data.tar.xz # because tar --append does not work with compression
+            unxz -T 0 control.tar.xz data.tar.xz # because tar --append does not work with compression
             extract control.tar control
 
             fixup_callback "$file_name"
 
             replace control.tar control
-            xz control.tar data.tar
+            xz -T 0 control.tar data.tar
             ar r "$file_name" debian-binary control.tar.xz data.tar.xz
             rm debian-binary control.tar.xz data.tar.xz
 
