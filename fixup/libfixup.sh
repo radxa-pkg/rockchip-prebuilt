@@ -3,6 +3,18 @@
 set -euo pipefail
 shopt -s nullglob
 
+extract() {
+    local tar_file="$1" target="$2"
+    tar --to-stdout -xf "$tar_file" "./$target" > "./$(basename "$target")"
+}
+
+replace() {
+    local tar_file="$1" target="$2"
+    tar --delete -f "$tar_file" "./$target" # avoid duplicate members
+    tar --append --owner=root --group=root -f "$tar_file" "./$(basename "$target")"
+    rm "./$(basename "$target")"
+}
+
 fixup_loop() {
     while (( $# > 0))
     do
@@ -16,16 +28,15 @@ fixup_loop() {
         pushd "$dir_path"
 
             ar x "$file_name"
-            unxz control.tar.xz # because tar --append does not work with compression
-            tar --to-stdout -xf control.tar ./control > control
+            unxz control.tar.xz data.tar.xz # because tar --append does not work with compression
+            extract control.tar control
 
             fixup_callback "$file_name"
 
-            tar --delete -f control.tar ./control # avoid duplicate members
-            tar --append --owner=root --group=root -f control.tar ./control
-            xz control.tar
+            replace control.tar control
+            xz control.tar data.tar
             ar r "$file_name" debian-binary control.tar.xz data.tar.xz
-            rm control debian-binary control.tar.xz data.tar.xz
+            rm debian-binary control.tar.xz data.tar.xz
 
         popd
     done
