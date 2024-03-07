@@ -14,3 +14,10 @@ Priority: optional
 Depends: ${misc:Depends},
 Description: Rockchip specific udev rules
  This package provides Rockchip specific udev rules.
+
+Package: rockchip-pulseaudio-config
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends},
+Description: Rockchip specific PulseAudio config
+ This package provides Rockchip PulseAudio config.

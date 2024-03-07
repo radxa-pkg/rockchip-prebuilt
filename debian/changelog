@@ -4,6 +4,36 @@ rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-4) UNRELEASED; urgency=medium
 
  -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 07 Mar 2024 19:48:43 +0800
 
+rockchip-pulseaudio-config (0.3.2) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Remove distribution restriction
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 27 Feb 2024 06:45:42 +0000
+
+rockchip-pulseaudio-config (0.3.1) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Fix CI
+
+  [ dependabot[bot] ]
+  * Bump actions/checkout from 3 to 4
+
+  [ dependabot[bot] ]
+  * Bump actions/upload-artifact from 3 to 4
+
+  [ dependabot[bot] ]
+  * Bump actions/download-artifact from 3 to 4
+  * fix: do not fail installation when the file is not installed
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 18 Jan 2024 10:32:05 +0000
+
+rockchip-pulseaudio-config (0.3.0) stable; urgency=medium
+
+  * Split from radxa-profiles
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 13 Jul 2023 11:57:59 +0800
+
 rockchip-udev (0.3.0) stable; urgency=medium
 
   * Split from radxa-profiles
