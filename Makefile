@@ -1,4 +1,5 @@
 PROJECT ?= rockchip-prebuilt
+SOURCE ?= src
 
 .PHONY: all
 all: build
@@ -7,11 +8,11 @@ all: build
 # Development
 #
 .PHONY: update
-update: debian VERSION clean
+update: $(SOURCE) VERSION clean
 	tag_name="$(shell cat VERSION)" && \
 	current_tag="$${tag_name%-*}" && \
 	tag_name="$${tag_name/rkr[0-9]*/rkr}" && \
-	pushd debian && \
+	pushd "$^" && \
 		git fetch && \
 		latest_tag="$(shell git tag -l "$$tag_name*" --sort=-refname | head -n 1)" && \
 		if [[ "$$current_tag" == "$$latest_tag" ]]; \
@@ -35,7 +36,7 @@ test:
 # Build
 #
 .PHONY: build
-build: debian
+build: $(SOURCE)
 	find "$^" -name "camera_engine_rkaiq_*_arm64.deb" -exec fixup/fix_rkaiq {} +
 	find "$^" -name "rktoolkit_*_arm64.deb" -exec fixup/fix_rktoolkit {} +
 	# Disable Chromium fixup, since we currently install libmali by default

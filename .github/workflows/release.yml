@@ -35,7 +35,7 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            debian/packages/arm64/**/*.deb
+            src/packages/arm64/**/*.deb
             pkg.conf
       - name: Update Test repos
         uses: radxa-repo/update-repo-action@main
