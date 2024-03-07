@@ -30,7 +30,7 @@ update: $(SOURCE) VERSION clean
 #
 .PHONY: test
 test:
-	
+
 
 #
 # Build

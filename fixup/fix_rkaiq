@@ -13,6 +13,7 @@
 #
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+# shellcheck source=fixup/libfixup.sh
 source "$SCRIPT_DIR/libfixup.sh"
 
 fixup_callback() {
