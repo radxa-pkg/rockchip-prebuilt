@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+include /usr/share/dpkg/architecture.mk
+
+%:
+	dh $@
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
+override_dh_installudev:
+	dh_installudev -prockchip-udev --name=rockchip-camera --priority=88
+	dh_installudev -prockchip-udev --name=pulseaudio-rockchip --priority=90
+	dh_installudev -prockchip-udev --name=rockchip-permissions --priority=99

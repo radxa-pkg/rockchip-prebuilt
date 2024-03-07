@@ -1,0 +1,298 @@
+rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-4) UNRELEASED; urgency=medium
+
+  * Transitional release
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 07 Mar 2024 19:48:43 +0800
+
+rockchip-udev (0.3.0) stable; urgency=medium
+
+  * Split from radxa-profiles
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 13 Jul 2023 11:57:59 +0800
+
+radxa-profiles (0.2.22) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Add some Rockchip KDE configs
+  * Add NetworkManager configs
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 13 Jul 2023 03:36:59 +0000
+
+radxa-profiles (0.2.21) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Update CI runner image
+  * Fix build
+  * Update Amlogic system config
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 13 Jul 2023 03:14:48 +0000
+
+radxa-profiles (0.2.20) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Update rkaiq version pinning
+  * Add release target
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 10 Jul 2023 04:05:34 +0000
+
+radxa-profiles (0.2.19) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Add bookworm support
+
+  [ Radxa-Alvin ]
+  * Modify board name radxa zero 3w
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 26 Jun 2023 02:47:23 +0000
+
+radxa-profiles (0.2.18) jammy; urgency=medium
+
+  [ Alvin Xie ]
+  * Add task-rock-3-zero-w package
+
+  [ ZHANG Yuntian ]
+  * Add new version workflow
+  * Install dependencies
+  * Add email and name for gbp dch
+  * Update gbp dch arguments
+  * Update gbp dch command
+  * Fix ubuntu1 suffix
+  * Use PAT to workaround branch protection
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 07 Jun 2023 12:26:03 +0000
+
+radxa-profiles (0.2.17) stable; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Trigger apt update on release
+  * Add task-radxa-cm5-io
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 29 May 2023 18:55:59 +0800
+
+radxa-profiles (0.2.16) stable; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Add task-radxa-e61 package
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 16 May 2023 14:17:50 +0800
+
+radxa-profiles (0.2.15) stable; urgency=medium
+
+  [ Feng Zhang ]
+  * Disable automatic switching of sound cards
+    This fixes ROCK 5A's audio source display issue
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 26 Apr 2023 17:46:27 +0800
+
+radxa-profiles (0.2.14) stable; urgency=medium
+
+  * Create individual packages for Rockchip features
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 19 Apr 2023 16:55:55 +0800
+
+radxa-profiles (0.2.13) stable; urgency=medium
+
+  * Update rk356x camera related packages
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 29 Mar 2023 22:00:37 +0800
+
+radxa-profiles (0.2.12) stable; urgency=medium
+
+  * Auto reconnect Bluetooth audio devices
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 17 Mar 2023 17:47:55 +0800
+
+radxa-profiles (0.2.11) stable; urgency=medium
+
+  * Add workarounds for Rockchip
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 10 Mar 2023 17:10:44 +0800
+
+radxa-profiles (0.2.10) stable; urgency=medium
+
+  * Add radxa-xorg-wrapper
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 10 Mar 2023 17:03:02 +0800
+
+radxa-profiles (0.2.9) stable; urgency=medium
+
+  * Workaround compatibility issue with Buster
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 03 Mar 2023 11:47:10 +0800
+
+radxa-profiles (0.2.8) stable; urgency=medium
+
+  * Update librga2 version
+  * Use deb-triggers to update PulseAudio config
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 22 Feb 2023 11:32:50 +0800
+
+radxa-profiles (0.2.7) stable; urgency=medium
+
+  * Fix sound playback on dual display devices
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 21 Feb 2023 18:55:42 +0800
+
+radxa-profiles (0.2.6) stable; urgency=medium
+
+  * Fix typo in task-rockchip-sound's dependencies
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 10 Feb 2023 11:04:51 +0800
+
+radxa-profiles (0.2.5) stable; urgency=medium
+
+  * Fix missing udev file from rockchip-udev
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 09 Feb 2023 16:03:48 +0800
+
+radxa-profiles (0.2.4) stable; urgency=medium
+
+  * Move configs out of meta package
+  * Support rockchip-hdmi2 sound output
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 09 Feb 2023 15:52:05 +0800
+
+radxa-profiles (0.2.3) stable; urgency=medium
+
+  * Maintenance release
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 09 Feb 2023 10:29:24 +0800
+
+radxa-profiles (0.2.2) stable; urgency=medium
+
+  * Provide ROCK 4C+ DisplayPort sound support via radxa-alsa-config package
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 02 Feb 2023 11:52:29 +0800
+
+radxa-profiles (0.2.1) stable; urgency=medium
+
+  * Move ALSA configs to rockchip-alsa-config package
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 29 Dec 2022 11:03:00 +0800
+
+radxa-profiles (0.2.0) stable; urgency=medium
+
+  * Improve compatibility with rkr3.4 & 3.5+ release
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 27 Dec 2022 17:50:42 +0800
+
+radxa-profiles (0.1.18) stable; urgency=medium
+
+  * Import sound configs from Rockchip overlay
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 14 Dec 2022 17:27:55 +0800
+
+radxa-profiles (0.1.17) stable; urgency=medium
+
+  * Remove librga2 version pinning
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 12 Dec 2022 19:37:07 +0800
+
+radxa-profiles (0.1.16) stable; urgency=medium
+
+  * Update package dependencies
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 12 Dec 2022 19:04:27 +0800
+
+radxa-profiles (0.1.15) stable; urgency=medium
+
+  * Fix lintian warnings
+  * Add version pinning for librga2
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 12 Dec 2022 18:14:42 +0800
+
+radxa-profiles (0.1.14) stable; urgency=medium
+
+  * Update librga2 version pinning
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 12 Dec 2022 15:18:47 +0800
+
+radxa-profiles (0.1.13) stable; urgency=medium
+
+  * Update librga2 version requirement
+  * Update board profiles
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 12 Dec 2022 14:58:30 +0800
+
+radxa-profiles (0.1.12) stable; urgency=medium
+
+  * Add librga2 dependencies
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 12 Dec 2022 11:36:42 +0800
+
+radxa-profiles (0.1.11) stable; urgency=medium
+
+  * Update libmali package name to Rockchip r3.5
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 25 Nov 2022 15:21:04 +0800
+
+radxa-profiles (0.1.10) stable; urgency=medium
+
+  * Add extra V4L tools
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 24 Nov 2022 15:04:30 +0800
+
+radxa-profiles (0.1.9) stable; urgency=medium
+
+  * Add rock-4-core-io
+  * Add 60-rockchip-drm.rules
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 23 Nov 2022 15:19:15 +0800
+
+radxa-profiles (0.1.8) stable; urgency=medium
+
+  * Match ROCK 4A/B+ name with upstream
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 17 Nov 2022 15:33:48 +0800
+
+radxa-profiles (0.1.7) stable; urgency=medium
+
+  * Add task-radxa-cm3-sodimm-io
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 08 Nov 2022 16:49:38 +0800
+
+radxa-profiles (0.1.6) stable; urgency=medium
+
+  * Add missing Rockchip packages
+  * No longer Ubuntu upload as Rockchip packages are not compatible with it
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 07 Nov 2022 15:32:43 +0800
+
+radxa-profiles (0.1.5) stable; urgency=medium
+
+  * Add missing product specific packages
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 04 Nov 2022 17:04:26 +0800
+
+radxa-profiles (0.1.4) stable; urgency=medium
+
+  * Fix release template
+  * Add task-rockchip-chromium package
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 04 Nov 2022 15:27:40 +0800
+
+radxa-profiles (0.1.3) stable; urgency=medium
+
+  * Fix package dependencies
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 01 Nov 2022 20:33:24 +0800
+
+radxa-profiles (0.1.2) stable; urgency=medium
+
+  * Rename radxa-nx5 to radxa-nx5-io
+  * Add rockchip-chromium-x11-utils to task-rockchip
+  * Add Rockchip udev rule
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 01 Nov 2022 16:49:19 +0800
+
+radxa-profiles (0.1.1) stable; urgency=medium
+
+  * Fix dependency on task-rockchip
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 26 Oct 2022 21:14:50 +0800
+
+radxa-profiles (0.1.0) stable; urgency=medium
+
+  * Add initial packages
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 24 Oct 2022 15:18:52 +0800

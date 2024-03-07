@@ -1,0 +1,16 @@
+Source: rockchip-prebuilt
+Maintainer: "Radxa Computer Co., Ltd" <dev@radxa.com>
+Section: libs
+Priority: optional
+Standards-Version: 4.6.0
+Build-Depends: debhelper (>=12~),
+               devscripts,
+               lintian,
+               pandoc,
+
+Package: rockchip-udev
+Architecture: all
+Priority: optional
+Depends: ${misc:Depends},
+Description: Rockchip specific udev rules
+ This package provides Rockchip specific udev rules.

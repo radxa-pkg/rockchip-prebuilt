@@ -36,7 +36,22 @@ test:
 # Build
 #
 .PHONY: build
-build: $(SOURCE)
+build: build-doc build-deb
+
+SRC-DOC		:=	.
+DOCS		:=	$(SRC-DOC)/SOURCE
+build-doc: $(DOCS)
+
+$(SRC-DOC):
+	mkdir -p $(SRC-DOC)
+
+.PHONY: $(SRC-DOC)/SOURCE
+$(SRC-DOC)/SOURCE: $(SRC-DOC)
+	echo -e "git clone $(shell git remote get-url origin)\ngit checkout $(shell git rev-parse HEAD)" > "$@"
+
+SRC-DEB		:=	$(SOURCE)
+.PHONY: build-deb
+build-deb: $(SRC-DEB)
 	find "$^" -name "camera_engine_rkaiq_*_arm64.deb" -exec fixup/fix_rkaiq {} +
 	find "$^" -name "rktoolkit_*_arm64.deb" -exec fixup/fix_rktoolkit {} +
 	# Disable Chromium fixup, since we currently install libmali by default
@@ -60,10 +75,13 @@ clean-deb:
 # Release
 #
 .PHONY: dch
-dch:
+dch: debian/changelog
+	EDITOR=true gbp dch --debian-branch=main --multimaint-merge --commit --release --dch-opt=--upstream
 
 .PHONY: deb
-deb: build
+deb: debian
+	debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file -- %p_%v_*.changes" --no-sign -b
 
 .PHONY: release
 release:
+	gh workflow run .github/workflows/new_version.yml
