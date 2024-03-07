@@ -37,16 +37,16 @@ jobs:
           sudo apt-get update
           sudo apt-get build-dep --no-install-recommends -y .
           make all deb
-          - name: Workaround actions/upload-artifact#176
-            run: |
-              echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
-          - name: Upload artifacts
-            uses: actions/upload-artifact@v4
-            with:
-              name: ${{ github.event.repository.name }}
-              path: |
-                ${{ env.artifacts_path }}/*.deb
-                src/packages/arm64/**/*.deb
+      - name: Workaround actions/upload-artifact#176
+        run: |
+          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.event.repository.name }}
+          path: |
+            ${{ env.artifacts_path }}/*.deb
+            src/packages/arm64/**/*.deb
   release:
     runs-on: ubuntu-latest
     needs: build
