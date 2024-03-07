@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 #
-# Rockchip begins to include adbd in rktoolkit, which is newer than
-# android-tools-adbd we got from Debian Buster.
+# Rockchip Chromium depends on libmali.so.1, which is provided by libmali driver.
 #
-# However, the Debian 11 SDK contains the same package with the same version,
-# so using its own name as dependency can break adbd related functionality.
-#
-# Add a virtual package for dependency.
+# Patching the binary to use libgbm1 instead.
 #
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
