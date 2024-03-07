@@ -38,7 +38,8 @@ test:
 build: debian
 	find "$^" -name "camera_engine_rkaiq_*_arm64.deb" -exec fixup/fix_rkaiq {} +
 	find "$^" -name "rktoolkit_*_arm64.deb" -exec fixup/fix_rktoolkit {} +
-	find "$^" -name "chromium-x11_*_arm64.deb" -exec fixup/fix_chromium {} +
+	# Disable Chromium fixup, since we currently install libmali by default
+	#find "$^" -name "chromium-x11_*_arm64.deb" -exec fixup/fix_chromium {} +
 
 #
 # Clean
