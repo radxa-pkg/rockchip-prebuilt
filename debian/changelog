@@ -1,3 +1,12 @@
+rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-5) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: correct indentation error introduced by pasting
+  * fix: adapt to artifacts folder structure
+  * feat: ci: avoid unnecessary release steps
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 08 Mar 2024 10:37:26 +0800
+
 rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-4) UNRELEASED; urgency=medium
 
   * Transitional release
