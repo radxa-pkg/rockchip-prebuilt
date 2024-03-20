@@ -10,12 +10,15 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 source "$SCRIPT_DIR/libfixup.sh"
 
 fixup_callback() {
+    if ! grep "^Depends:" control | grep "libc++1"
+    then
+        sed -Ei "s/^(Depends:)/\1 libc++1,/" control
+    fi
 	## Disable libmali fixup, since we currently install libmali by default
     # extract data.tar usr/lib/chromium/chromium-bin
     # patchelf --replace-needed libmali.so.1 libgbm.so.1 usr/lib/chromium/chromium-bin
     # replace data.tar usr/lib/chromium/chromium-bin
     # rm -rf usr/
-    :
 }
 
 fixup_loop "$@"
