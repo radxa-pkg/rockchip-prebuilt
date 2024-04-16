@@ -36,7 +36,17 @@ test:
 # Build
 #
 .PHONY: build
-build: build-doc build-deb
+build: build-doc build-deb build-man
+
+SRC-MAN		:=	man
+SRCS-MAN	:=	$(wildcard $(SRC-MAN)/*.md)
+MANS		:=	$(SRCS-MAN:.md=)
+.PHONY: build-man
+build-man: $(MANS)
+
+$(SRC-MAN)/%: $(SRC-MAN)/%.md
+	pandoc "$<" -o "$@" --from markdown --to man -s
+
 
 SRC-DOC		:=	.
 DOCS		:=	$(SRC-DOC)/SOURCE
