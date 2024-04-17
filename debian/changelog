@@ -1,3 +1,19 @@
+rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-6) jammy; urgency=medium
+
+  [ dependabot[bot] ]
+  * build(deps): bump softprops/action-gh-release from 1 to 2
+
+  [ ZHANG Yuntian ]
+  * feat: reenable Chromium fixup
+  * feat: add libc++ fixup for Chromium
+  * fix: ignore build output
+  * fix: add execution bit for rkaiq
+
+  [ Ken Wang ]
+  * feat: add rockchip-drm drm-hotplug
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 17 Apr 2024 06:32:29 +0000
+
 rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-5) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
