@@ -24,6 +24,10 @@ fixup_callback() {
     package_name="$(grep "Package:" control | cut -d' ' -f2)"
     sed -i -E "s/^(Version: .*)$/\1-$soc/" control
     echo "Provides: $package_name-$soc" >> control
+
+    extract data.tar etc/init.d/rkaiq_3A.sh
+    chmod +x etc/init.d/rkaiq_3A.sh
+    replace data.tar etc/init.d/rkaiq_3A.sh
 }
 
 fixup_loop "$@"
