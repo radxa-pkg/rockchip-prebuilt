@@ -2,14 +2,18 @@
 #
 # There are several incompatible camera_engine_rkaiq packages with the exact
 # same package name and version, causing a big mess:
-# * freight (the apt repo generator) will overwrite packages with same name and
-#   version.
+# * freight and aptly (the apt repo generator) will overwrite packages with same
+#   name and version.
 # * We have no way to pin specific product to the matching variant.
 #
 # As such, we add a unique suffix to version so they can coexist in our apt
 # repo, and then we let them provide virtual package, so other package's
 # dependencies do not have to pin to a specific version, and can be easily
 # upgraded.
+#
+# Some issues preventing the service from running:
+# * Script must be executable for the service to run.
+# * systemd.wants expects symbolic link, and will ignore real file.
 #
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
