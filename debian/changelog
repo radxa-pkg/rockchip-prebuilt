@@ -1,3 +1,11 @@
+rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-7) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: systemd.wants must by symbolic links
+  * doc: update explanation for current available fixups
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Mon, 22 Apr 2024 11:49:17 +0000
+
 rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-6) jammy; urgency=medium
 
   [ dependabot[bot] ]
