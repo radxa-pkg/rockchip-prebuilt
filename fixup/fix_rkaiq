@@ -28,6 +28,10 @@ fixup_callback() {
     extract data.tar etc/init.d/rkaiq_3A.sh
     chmod +x etc/init.d/rkaiq_3A.sh
     replace data.tar etc/init.d/rkaiq_3A.sh
+
+    mkdir -p etc/systemd/system/sysinit.target.wants
+    ln -s /lib/systemd/system/rkaiq_3A.service etc/systemd/system/sysinit.target.wants/rkaiq_3A.service
+    replace data.tar etc/systemd/system/sysinit.target.wants/rkaiq_3A.service
 }
 
 fixup_loop "$@"
