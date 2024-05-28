@@ -1,2 +1,4 @@
-rockchip-udev/usr /
-man/drm-hotplug.8 /usr/share/man/man8
+rockchip-udev/usr/ /
+man/drm-hotplug.8 /usr/share/man/man8/
+src/overlay/etc/udev/ /usr/lib/
+# src/overlay/usr/lib/udev/ /usr/lib/
