@@ -78,6 +78,8 @@ $(SRC-DOC)/SOURCE: $(SRC-DOC)
 SRC-DEB		:=	$(SOURCE)
 .PHONY: build-deb
 build-deb: $(SRC-DEB)
+# delete looping symbolic link, or find will return error
+	rm -f "$^/ubuntu-build-service/bullseye-desktop-armhf/bullseye-desktop-armhf"
 	find -L "$^" -name "camera_engine_rkaiq_*_arm64.deb" -exec fixup/fix_rkaiq {} +
 	find -L "$^" -name "rktoolkit_*_arm64.deb" -exec fixup/fix_rktoolkit {} +
 	find -L "$^" -name "chromium-x11_*_arm64.deb" -exec fixup/fix_chromium {} +
@@ -106,7 +108,7 @@ dch: debian/changelog
 
 .PHONY: deb
 deb: debian
-	debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file -- %p_%v_*.changes" --no-sign -b
+	debuild --no-lintian --lintian-hook "lintian --fail-on error,warning --suppress-tags bad-distribution-in-changes-file,package-has-long-file-name -- %p_%v_*.changes" --no-sign -b
 
 .PHONY: release
 release:
