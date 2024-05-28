@@ -1,0 +1,10 @@
+{
+  "*": {
+    "Releases": [
+      "rk3528-bullseye",
+      "rk3528-bullseye-test",
+      "rk3528a-bullseye",
+      "rk3528a-bullseye-test"
+    ]
+  }
+}
