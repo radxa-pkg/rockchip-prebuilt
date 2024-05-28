@@ -35,8 +35,24 @@ test:
 #
 # Build
 #
+$(SOURCE):
+	version="$$(dpkg-parsechangelog -S Version)" && \
+	debian_version="$${version%%-*}" && \
+	reversion="$${version##*-}" && \
+	rockchip_version="$${version#$${debian_version}-}" && \
+	rockchip_version="$${rockchip_version%-$${reversion}}" && \
+	ln -s "$$rockchip_version" "$@"
+
+pkg.conf:
+	version="$$(dpkg-parsechangelog -S Version)" && \
+	debian_version="$${version%%-*}" && \
+	reversion="$${version##*-}" && \
+	rockchip_version="$${version#$${debian_version}-}" && \
+	rockchip_version="$${rockchip_version%-$${reversion}}" && \
+	cp "pkg.conf.$$rockchip_version" "$@"
+
 .PHONY: build
-build: build-doc build-deb build-man
+build: build-doc build-deb build-man $(SOURCE) pkg.conf
 
 SRC-MAN		:=	man
 SRCS-MAN	:=	$(wildcard $(SRC-MAN)/*.md)
@@ -62,9 +78,9 @@ $(SRC-DOC)/SOURCE: $(SRC-DOC)
 SRC-DEB		:=	$(SOURCE)
 .PHONY: build-deb
 build-deb: $(SRC-DEB)
-	find "$^" -name "camera_engine_rkaiq_*_arm64.deb" -exec fixup/fix_rkaiq {} +
-	find "$^" -name "rktoolkit_*_arm64.deb" -exec fixup/fix_rktoolkit {} +
-	find "$^" -name "chromium-x11_*_arm64.deb" -exec fixup/fix_chromium {} +
+	find -L "$^" -name "camera_engine_rkaiq_*_arm64.deb" -exec fixup/fix_rkaiq {} +
+	find -L "$^" -name "rktoolkit_*_arm64.deb" -exec fixup/fix_rktoolkit {} +
+	find -L "$^" -name "chromium-x11_*_arm64.deb" -exec fixup/fix_chromium {} +
 
 #
 # Clean
@@ -74,6 +90,7 @@ distclean: clean
 
 .PHONY: clean
 clean: clean-deb
+	rm -f "$(SOURCE)" pkg.conf
 
 .PHONY: clean-deb
 clean-deb:
