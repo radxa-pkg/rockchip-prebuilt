@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 #
 # Rockchip Chromium depends on libmali.so.1, which is provided by libmali driver.
-# Patching the binary to use libgbm1 instead.
-# On Debian 12 this seems to cause GPU not working properly, so the fix is
-# currently disabled, and libmali MUST be installed for Chromium to work.
+# Patching the binary to use libgbm1 instead, so it can use open source GPU driver.
 #
 # Also add the missing libc++1 dependency.
 #
@@ -18,11 +16,10 @@ fixup_callback() {
         sed -Ei "s/^(Depends:)/\1 libc++1,/" control
     fi
 
-	## Disable libmali fixup due to reasons mentioned above.
-    # extract data.tar usr/lib/chromium/chromium-bin
-    # patchelf --replace-needed libmali.so.1 libgbm.so.1 usr/lib/chromium/chromium-bin
-    # replace data.tar usr/lib/chromium/chromium-bin
-    # rm -rf usr/
+    extract data.tar usr/lib/chromium/chromium-bin
+    patchelf --replace-needed libmali.so.1 libgbm.so.1 usr/lib/chromium/chromium-bin
+    replace data.tar usr/lib/chromium/chromium-bin
+    rm -rf usr/
 }
 
 fixup_loop "$@"

@@ -7,6 +7,7 @@
 # so using its own name as dependency can break adbd related functionality.
 #
 # Add a virtual package for dependency.
+# This is fixed at least in RK3528's Debian 11 rkr6 SDK, which also contains adbd.
 #
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
