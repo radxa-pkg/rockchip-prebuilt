@@ -1,3 +1,15 @@
+rockchip-prebuilt (0.4.1-rk3528-linux-release-linux-5.10-gen-rkr6-1) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * refactor: support RK3588 specific release
+  * feat: add rk3528-linux-release-linux-5.10-gen-rkr6
+  * feat: update fixup with our current tech stack
+  * fix: allow rk3528 to build
+  * refactor: pull udev rules from overlay directly
+  * ci: do not trigger normal repo update
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 29 May 2024 10:35:37 +0800
+
 rockchip-prebuilt (0.4.0-linux-6.1-stan-rkr1-7) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
