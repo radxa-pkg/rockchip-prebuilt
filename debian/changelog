@@ -1,3 +1,10 @@
+rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-1) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * Re-release to fix Chromium's libmali dependency
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 31 May 2024 11:40:24 +0800
+
 rockchip-prebuilt (0.4.1-rk3528-linux-release-linux-5.10-gen-rkr6-1) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
