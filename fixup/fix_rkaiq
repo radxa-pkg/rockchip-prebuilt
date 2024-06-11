@@ -27,7 +27,11 @@ fixup_callback() {
     soc="$(sed -E "s/.*(rk[0-9]+).*/\1/" <<< "$file_name")"
     package_name="$(grep "Package:" control | cut -d' ' -f2)"
     sed -i -E "s/^(Version: .*)$/\1-$soc/" control
-    echo "Provides: $package_name-$soc" >> control
+    cat <<EOF >> control
+Provides: $package_name-$soc
+Conflicts: $package_name-$soc
+Replaces: $package_name-$soc
+EOF
 
     extract data.tar etc/init.d/rkaiq_3A.sh
     chmod +x etc/init.d/rkaiq_3A.sh
