@@ -1,3 +1,11 @@
+rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-3) jammy; urgency=medium
+
+  [ CodeChenL ]
+  * fix: rkaiq: add Conflicts and Replaces to control
+  * feat: add CODEOWNERS
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 11 Jun 2024 09:10:54 +0000
+
 rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-2) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
