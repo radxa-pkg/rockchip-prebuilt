@@ -21,16 +21,17 @@ SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 source "$SCRIPT_DIR/libfixup.sh"
 
 fixup_callback() {
-    local file_name soc package_name
+    local file_name soc package_name version
     file_name="$1"
 
     soc="$(sed -E "s/.*(rk[0-9]+).*/\1/" <<< "$file_name")"
     package_name="$(grep "Package:" control | cut -d' ' -f2)"
     sed -i -E "s/^(Version: .*)$/\1-$soc/" control
+    version="$(grep "^Version:" control | cut -d ' ' -f2)"
     cat <<EOF >> control
-Provides: $package_name-$soc
-Conflicts: $package_name-$soc
-Replaces: $package_name-$soc
+Provides: $package_name-$soc (= $version)
+Conflicts: $package_name-$soc (<< $version)
+Replaces: $package_name-$soc (<< $version)
 EOF
 
     extract data.tar etc/init.d/rkaiq_3A.sh
