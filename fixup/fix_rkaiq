@@ -30,8 +30,8 @@ fixup_callback() {
     version="$(grep "^Version:" control | cut -d ' ' -f2)"
     cat <<EOF >> control
 Provides: $package_name-$soc (= $version)
-Conflicts: $package_name-$soc
-Replaces: $package_name-$soc
+Conflicts: $package_name-$soc (<< $version)
+Replaces: $package_name-$soc (<< $version)
 EOF
 
     extract data.tar etc/init.d/rkaiq_3A.sh
