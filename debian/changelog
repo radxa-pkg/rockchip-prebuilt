@@ -1,3 +1,11 @@
+rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-4) jammy; urgency=medium
+
+  [ CodeChenL ]
+  * fix: rkaiq: add version to Provides
+  * fix: rkaiq: remove older package before install
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Wed, 12 Jun 2024 11:27:03 +0000
+
 rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-3) jammy; urgency=medium
 
   [ CodeChenL ]
