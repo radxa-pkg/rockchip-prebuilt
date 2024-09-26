@@ -42,7 +42,7 @@ $(SOURCE):
 	reversion="$${version##*-}" && \
 	rockchip_version="$${version#$${debian_version}-}" && \
 	rockchip_version="$${rockchip_version%-$${reversion}}" && \
-	ln -sf "$$rockchip_version" "$@"
+	ln -sTf "$$rockchip_version" "$@"
 
 .PHONY: pkg.conf
 pkg.conf:
