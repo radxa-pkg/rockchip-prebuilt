@@ -15,6 +15,10 @@
 # * Script must be executable for the service to run.
 # * systemd.wants expects symbolic link, and will ignore real file.
 #
+# We also include a random librkaiq.so from Rockchip,
+# because the default one will provide a dark image when server is restarted.
+# https://redmine.rock-chips.com/issues/508958
+#
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 # shellcheck source=fixup/libfixup.sh
@@ -41,6 +45,12 @@ EOF
     mkdir -p etc/systemd/system/sysinit.target.wants
     ln -s /lib/systemd/system/rkaiq_3A.service etc/systemd/system/sysinit.target.wants/rkaiq_3A.service
     replace data.tar etc/systemd/system/sysinit.target.wants/rkaiq_3A.service
+
+    if [[ $soc == "rk3588" ]]; then
+        mkdir -p usr/lib
+        xz -dcT 0 "$SCRIPT_DIR/librkaiq.so.xz" > usr/lib/librkaiq.so
+        replace data.tar usr/lib/librkaiq.so
+    fi
 }
 
 fixup_loop "$@"
