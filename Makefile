@@ -35,14 +35,16 @@ test:
 #
 # Build
 #
+.PHONY: $(SOURCE)
 $(SOURCE):
 	version="$$(dpkg-parsechangelog -S Version)" && \
 	debian_version="$${version%%-*}" && \
 	reversion="$${version##*-}" && \
 	rockchip_version="$${version#$${debian_version}-}" && \
 	rockchip_version="$${rockchip_version%-$${reversion}}" && \
-	ln -s "$$rockchip_version" "$@"
+	ln -sf "$$rockchip_version" "$@"
 
+.PHONY: pkg.conf
 pkg.conf:
 	version="$$(dpkg-parsechangelog -S Version)" && \
 	debian_version="$${version%%-*}" && \
