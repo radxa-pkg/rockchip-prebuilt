@@ -1,3 +1,12 @@
+rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-5) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: always recreate src & pkg.conf link
+  * fix: ln may create symbolic link under the src folder instead
+  * fix: use custom Rockchip prebuilt to fix camera issue
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 08 Oct 2024 02:04:38 +0000
+
 rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-4) jammy; urgency=medium
 
   [ CodeChenL ]
