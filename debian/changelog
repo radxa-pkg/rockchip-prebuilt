@@ -1,3 +1,10 @@
+rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-1) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * chore: bump SDK release to rkr4
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 12 Nov 2024 14:38:12 +0800
+
 rockchip-prebuilt (0.4.1-linux-6.1-stan-rkr1-5) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
