@@ -1,3 +1,13 @@
+rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-2) jammy; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: increase build space
+  * fix: increase build space again
+  * Revert "fix: use custom Rockchip prebuilt to fix camera issue"
+  * chore: sync CI command
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 26 Nov 2024 10:34:25 +0000
+
 rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-1) jammy; urgency=medium
 
   [ ZHANG Yuntian ]
