@@ -1,3 +1,10 @@
+rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-4) noble; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: split camera packages into individual repos
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 13 Mar 2025 06:42:36 +0000
+
 rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-3) jammy; urgency=medium
 
   [ Chen Jiali ]
