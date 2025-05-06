@@ -4,3 +4,6 @@
 [submodule "linux-6.1-stan-rkr4"]
 	path = linux-6.1-stan-rkr4
 	url = https://gitlab.com/rk3588_linux/linux/debian.git
+[submodule "linux-6.1-stan-rkr5.1"]
+	path = linux-6.1-stan-rkr5.1
+	url = https://gitlab.com/rk3588_linux/linux/debian.git
