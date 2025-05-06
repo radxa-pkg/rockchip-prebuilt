@@ -1,3 +1,10 @@
+rockchip-prebuilt (0.4.3-linux-6.1-stan-rkr5.1-1) noble; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * feat: add linux-6.1-stan-rkr5.1
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Tue, 06 May 2025 18:59:35 +0800
+
 rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-4) noble; urgency=medium
 
   [ ZHANG Yuntian ]
