@@ -1,3 +1,13 @@
+rockchip-prebuilt (0.4.3-linux-6.1-stan-rkr5.1-2) noble; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: remove extra comma
+
+  [ Zhaoming Luo ]
+  * fix: remove the prebuilt chromium package for linux-6.1-stan-rkr5.1
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Thu, 07 Aug 2025 03:47:14 +0000
+
 rockchip-prebuilt (0.4.3-linux-6.1-stan-rkr5.1-1) noble; urgency=medium
 
   [ ZHANG Yuntian ]
