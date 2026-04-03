@@ -1,3 +1,10 @@
+rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-5) noble; urgency=medium
+
+  [ Xinming Chen ]
+  * fix: remove the prebuilt chromium package for linux-6.1-stan-rkr4
+
+ -- "Radxa Computer Co., Ltd" <dev@radxa.com>  Fri, 03 Apr 2026 16:09:54 +0800
+
 rockchip-prebuilt (0.4.3-linux-6.1-stan-rkr5.1-2) noble; urgency=medium
 
   [ ZHANG Yuntian ]
