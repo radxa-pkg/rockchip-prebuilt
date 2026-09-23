@@ -52,6 +52,7 @@ jobs:
         path: |
           ${{ steps.artifacts_path.outputs.artifacts_path }}/*.deb
           src/packages/arm64/**/*.deb
+          pkg.conf
     - id: "distro_check"
       name: "Check if the latest version is releasable"
       run: |
@@ -106,7 +107,7 @@ jobs:
         fail_on_unmatched_files: false
         files: |
           .artifacts/**/*.deb
-          pkg.conf
+          .artifacts/pkg.conf
           VERSION
         prerelease: true
         tag_name: "${{ env.version }}"
