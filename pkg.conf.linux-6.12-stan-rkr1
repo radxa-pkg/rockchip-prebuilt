@@ -1,0 +1,86 @@
+{
+  "*": {
+    "Releases": [
+      "rk3399t-trixie",
+      "rk3399t-trixie-test",
+      "rk3399-trixie",
+      "rk3399-trixie-test",
+      "op1-trixie",
+      "op1-trixie-test",
+      "rk3399pro-trixie",
+      "rk3399pro-trixie-test"
+      "rk3562-trixie",
+      "rk3562-trixie-test",
+      "rk3566-trixie",
+      "rk3566-trixie-test",
+      "rk3566t-trixie",
+      "rk3566t-trixie-test",
+      "rk3568-trixie",
+      "rk3568-trixie-test",
+      "rk3572-trixie",
+      "rk3572-trixie-test",
+      "rk3576-trixie",
+      "rk3576-trixie-test",
+      "rk3582-trixie",
+      "rk3582-trixie-test",
+      "rk3588s-trixie",
+      "rk3588s-trixie-test",
+      "rk3588s2-trixie",
+      "rk3588s2-trixie-test",
+      "rk3588-trixie",
+      "rk3588-trixie-test"
+    ]
+  },
+  "camera_engine_rkaiq_rk3562_arm64.deb": {
+    "Releases": [
+      "rk3562-trixie",
+      "rk3562-trixie-test"
+    ]
+  },
+  "camera_engine_rkaiq_rk3568_arm64.deb": {
+    "Releases": [
+      "rk3566-trixie",
+      "rk3566-trixie-test",
+      "rk3566t-trixie",
+      "rk3566t-trixie-test",
+      "rk3568-trixie",
+      "rk3568-trixie-test"
+    ]
+  },
+  "camera_engine_rkaiq_rk3572_arm64.deb": {
+    "Releases": [
+      "rk3572-trixie",
+      "rk3572-trixie-test"
+    ]
+  },
+  "camera_engine_rkaiq_rk3576_arm64.deb": {
+    "Releases": [
+      "rk3576-trixie",
+      "rk3576-trixie-test"
+    ]
+  },
+  "camera_engine_rkaiq_rk3588_arm64.deb": {
+    "Releases": [
+      "rk3582-trixie",
+      "rk3582-trixie-test",
+      "rk3588s-trixie",
+      "rk3588s-trixie-test",
+      "rk3588s2-trixie",
+      "rk3588s2-trixie-test",
+      "rk3588-trixie",
+      "rk3588-trixie-test"
+    ]
+  },
+  "camera_engine_rkisp_v2.3.0_arm64.deb": {
+    "Releases": [
+      "rk3399t-trixie",
+      "rk3399t-trixie-test",
+      "rk3399-trixie",
+      "rk3399-trixie-test",
+      "op1-trixie",
+      "op1-trixie-test",
+      "rk3399pro-trixie",
+      "rk3399pro-trixie-test"
+    ]
+  }
+}
