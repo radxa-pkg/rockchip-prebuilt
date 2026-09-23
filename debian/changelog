@@ -1,3 +1,11 @@
+rockchip-prebuilt (0.5.0-linux-6.12-stan-rkr1-2) noble; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: remove duplicated packages
+  * fix: include pkg.conf from build output
+
+ -- "Radxa Computer (Shenzhen) Co., Ltd." <dev@radxa.com>  Wed, 23 Sep 2026 08:55:33 +0000
+
 rockchip-prebuilt (0.5.0-linux-6.12-stan-rkr1-1) noble; urgency=medium
 
   [ dependabot[bot] ]
