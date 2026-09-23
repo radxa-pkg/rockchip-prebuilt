@@ -1,7 +1,10 @@
 # rockchip-prebuilt
 
-[![Build & Release](https://github.com/radxa-pkg/rockchip-prebuilt/actions/workflows/release.yml/badge.svg)](https://github.com/radxa-pkg/rockchip-prebuilt/actions/workflows/release.yml)
+[![Release](https://github.com/radxa-pkg/rockchip-prebuilt/actions/workflows/release.yaml/badge.svg)](https://github.com/radxa-pkg/rockchip-prebuilt/actions/workflows/release.yaml)
 
-Rockchip prebuilt Debian packages
+## Build
 
-The packages are fetched from https://gitlab.com/rk3588_linux/linux/debian.
+1. `git clone --recurse-submodules https://github.com/radxa-pkg/rockchip-prebuilt.git`
+2. Open in [`devcontainer`](https://code.visualstudio.com/docs/devcontainers/containers)
+3. `make deb`
+
