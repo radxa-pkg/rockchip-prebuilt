@@ -1,3 +1,10 @@
+rockchip-prebuilt (0.5.0-linux-6.12-stan-rkr1-3) noble; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: upload-artifact will use top most dir as archive root
+
+ -- "Radxa Computer (Shenzhen) Co., Ltd." <dev@radxa.com>  Wed, 23 Sep 2026 09:36:50 +0000
+
 rockchip-prebuilt (0.5.0-linux-6.12-stan-rkr1-2) noble; urgency=medium
 
   [ ZHANG Yuntian ]
