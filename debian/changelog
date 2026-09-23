@@ -1,3 +1,16 @@
+rockchip-prebuilt (0.5.0-linux-6.12-stan-rkr1-1) UNRELEASED; urgency=medium
+
+  [ dependabot[bot] ]
+  * build(deps): bump actions/download-artifact from 4 to 8
+  * build(deps): bump actions/upload-artifact from 4 to 7
+  * build(deps): bump actions/checkout from 4 to 6
+
+  [ ZHANG Yuntian ]
+  * Update pkg.conf.linux-6.1-stan-rkr5.1
+  * feat: import linux-6.12-stan-rkr1
+
+ -- "Radxa Computer (Shenzhen) Co., Ltd." <dev@radxa.com>  Wed, 23 Sep 2026 03:52:48 +0000
+
 rockchip-prebuilt (0.4.2-linux-6.1-stan-rkr4-5) noble; urgency=medium
 
   [ Xinming Chen ]

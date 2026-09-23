@@ -107,7 +107,7 @@ jobs:
           .artifacts/**/*.deb
           pkg.conf
           VERSION
-        prerelease: false
+        prerelease: true
         tag_name: "${{ env.version }}"
         target_commitish: "${{ github.sha }}"
         token: "${{ secrets.GITHUB_TOKEN }}"
@@ -119,11 +119,11 @@ jobs:
           ## Changelog for ${{ env.version }}
           ${{ env.changes }}
         tag_name: "${{ env.version }}"
-    - name: "Update Test repos"
-      uses: "RadxaOS-SDK/rsdk/.github/actions/infra-repo-update@main"
-      with:
-        test-repo: true
-        token: "${{ secrets.RSDK_APT_REPOSITORY_TOKEN }}"
+    # - name: "Update Test repos"
+    #   uses: "RadxaOS-SDK/rsdk/.github/actions/infra-repo-update@main"
+    #   with:
+    #     test-repo: true
+    #     token: "${{ secrets.RSDK_APT_REPOSITORY_TOKEN }}"
 name: "Build & Release"
 "on":
   merge_group: {}
