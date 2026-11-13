@@ -40,6 +40,15 @@ jobs:
         runCmd: |
           set -euo pipefail
           make deb
+    - name: "Check pkg.conf"
+      run: |
+        if [[ -e pkg.conf ]]; then
+            jq 'true' pkg.conf
+        fi
+        if [[ -e pkg.conf.template ]]; then
+            jq 'true' pkg.conf.template
+        fi
+      shell: "bash"
     - name: "Workaround actions/upload-artifact#176"
       run: |
         mv ../*.deb ./
@@ -51,7 +60,6 @@ jobs:
         path: |
           *.deb
           pkg.conf
-          src/packages/arm64/**/*.deb
     - id: "distro_check"
       name: "Check if the latest version is releasable"
       run: |
@@ -107,8 +115,9 @@ jobs:
         files: |
           .artifacts/**/*.deb
           .artifacts/pkg.conf
+          pkg.conf
           VERSION
-        prerelease: true
+        prerelease: false
         tag_name: "${{ env.version }}"
         target_commitish: "${{ github.sha }}"
         token: "${{ secrets.GITHUB_TOKEN }}"
@@ -120,11 +129,11 @@ jobs:
           ## Changelog for ${{ env.version }}
           ${{ env.changes }}
         tag_name: "${{ env.version }}"
-    # - name: "Update Test repos"
-    #   uses: "RadxaOS-SDK/rsdk/.github/actions/infra-repo-update@main"
-    #   with:
-    #     test-repo: true
-    #     token: "${{ secrets.RSDK_APT_REPOSITORY_TOKEN }}"
+    - name: "Update Test repos"
+      uses: "RadxaOS-SDK/rsdk/.github/actions/infra-repo-update@main"
+      with:
+        test-repo: true
+        token: "${{ secrets.RSDK_APT_REPOSITORY_TOKEN }}"
 name: "Build & Release"
 "on":
   merge_group: {}
