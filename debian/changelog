@@ -1,3 +1,12 @@
+rockchip-prebuilt (6.1.4-1) UNRELEASED; urgency=medium
+
+  [ ZHANG Yuntian ]
+  * fix: rm -rf for directory
+  * fix: bashism
+  * chore: update to linux-6.1-stan-rkr4
+
+ -- "Radxa Computer (Shenzhen) Co., Ltd." <dev@radxa.com>  Fri, 13 Nov 2026 06:55:06 +0000
+
 rockchip-prebuilt (0.5.0-linux-6.12-stan-rkr1-4) noble; urgency=medium
 
   [ ZHANG Yuntian ]

@@ -58,6 +58,7 @@ jobs:
       with:
         name: "${{ github.event.repository.name }}"
         path: |
+          src/packages/arm64/**/*.deb
           *.deb
           pkg.conf
     - id: "distro_check"

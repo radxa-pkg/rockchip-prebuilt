@@ -1,0 +1,46 @@
+{
+  "*": {
+    "Releases": [
+      "rk3582-bookworm",
+      "rk3582-bookworm-test",
+      "rk3588-bookworm",
+      "rk3588-bookworm-test",
+      "rk3588s-bookworm",
+      "rk3588s-bookworm-test",
+      "rk3588s2-bookworm",
+      "rk3588s2-bookworm-test"
+    ]
+  },
+  "camera_engine_rkaiq_rk3562_arm64.deb": {
+    "Releases": [
+    ]
+  },
+  "camera_engine_rkaiq_rk3568_arm64.deb": {
+    "Releases": [
+    ]
+  },
+  "camera_engine_rkaiq_rk3572_arm64.deb": {
+    "Releases": [
+    ]
+  },
+  "camera_engine_rkaiq_rk3576_arm64.deb": {
+    "Releases": [
+    ]
+  },
+  "camera_engine_rkaiq_rk3588_arm64.deb": {
+    "Releases": [
+      "rk3582-bookworm",
+      "rk3582-bookworm-test",
+      "rk3588-bookworm",
+      "rk3588-bookworm-test",
+      "rk3588s-bookworm",
+      "rk3588s-bookworm-test",
+      "rk3588s2-bookworm",
+      "rk3588s2-bookworm-test"
+    ]
+  },
+  "camera_engine_rkisp_v2.3.0_arm64.deb": {
+    "Releases": [
+    ]
+  }
+}

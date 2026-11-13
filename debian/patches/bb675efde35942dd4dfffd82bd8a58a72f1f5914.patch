@@ -1,0 +1,17 @@
+From bb675efde35942dd4dfffd82bd8a58a72f1f5914 Mon Sep 17 00:00:00 2001
+From: liangyuanjin <liangyuanjin@radxa.com>
+Date: Wed, 16 Sep 2026 15:56:09 +0800
+Subject: [PATCH] fix: avoid camera alias conflicts on ROCK 5B+
+
+---
+ src/overlay/etc/udev/rules.d/88-rockchip-camera.rules | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/overlay/etc/udev/rules.d/88-rockchip-camera.rules b/src/overlay/etc/udev/rules.d/88-rockchip-camera.rules
+index 0208f6f..d3de5bd 100644
+--- a/src/overlay/etc/udev/rules.d/88-rockchip-camera.rules
++++ b/src/overlay/etc/udev/rules.d/88-rockchip-camera.rules
+@@ -1 +1,2 @@
+-ACTION=="add", SUBSYSTEM=="video4linux", ENV{ID_V4L_PRODUCT}=="*_mainpath", SYMLINK+="video-camera0"
++ACTION=="add", SUBSYSTEM=="video4linux", ENV{ID_V4L_PRODUCT}=="*_mainpath", ENV{ID_PATH}=="platform-rkisp0-vir0", SYMLINK+="video-camera0"
++ACTION=="add", SUBSYSTEM=="video4linux", ENV{ID_V4L_PRODUCT}=="*_mainpath", ENV{ID_PATH}=="platform-rkisp1-vir1", SYMLINK+="video-camera1"

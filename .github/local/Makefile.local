@@ -3,7 +3,6 @@
 #
 SOURCE ?= src
 
-.PHONY: $(SOURCE)
 $(SOURCE):
 	version="$$(dpkg-parsechangelog -S Version)" && \
 	debian_version="$${version%%-*}" && \
@@ -43,4 +42,4 @@ build-deb: $(SRC-DEB)
 		rm -rf "$^/packages/arm64/libdrm"; \
 	fi
 
-pre_build: build-deb build-man $(SOURCE) pkg.conf
+pre_build: build-deb build-man
